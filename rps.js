@@ -81,13 +81,13 @@ function game() {
 	let cScore = 0;
 	let pScore = 0;
 	let outcome = '';
-	for (i = 0; i < 5; i++) {
+	//for (i = 0; i < 5; i++) {
 		choice = playRound(playerSelection(), computerPlay());
 		if (choice === 'Computer wins')
 			cScore++;
 		else if (choice === 'Player wins')
 			pScore++;
-	}
+	//}
 	if (pScore < cScore)
 		alert(`Computer won. score was ${cScore}. Player score was ${pScore}`);
 	else
@@ -95,4 +95,5 @@ function game() {
 	return;
 }
 
+//MAIN (START HERE)
 game();
