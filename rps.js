@@ -3,6 +3,21 @@ const paperbutton = document.querySelector('#paper');
 const scissorsbutton = document.querySelector('#scissors');
 
 
+rockbutton.addEventListener('click', () => {
+  let choice = playRound('rock', computerPlay());
+  alert(outcome);
+});
+
+paperbutton.addEventListener('click', () => {
+  let choice = playRound('paper', computerPlay());
+  alert(outcome);
+});
+
+scissorsbutton.addEventListener('click', () => {
+  let choice = playRound('scissors', computerPlay());
+  alert(outcome);
+});
+
 //***********FUNCTIONS************************************************************
 
 function computerPlay() {
