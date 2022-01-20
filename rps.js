@@ -2,11 +2,40 @@ const rockbutton = document.querySelector('#rock');
 const paperbutton = document.querySelector('#paper');
 const scissorsbutton = document.querySelector('#scissors');
 const results = document.querySelector('#results');
-
+const gameRound = document.createElement('p');
+const compScore = document.createElement('p');
+const playScore = document.createElement('p');
+const banner = document.createElement('p');
+results.appendChild(gameRound);
+results.appendChild(compScore);
+results.appendChild(playScore);
+results.appendChild(banner);
+let cscore = 0;
+let pscore = 0;
+let round = 1;
+banner.textContent = "Choose Rock, Paper, or Scissors!";
+compScore.textContent = 'Computer: 0';
+playScore.textContent = 'Player: 0';
 //need a score that is saved to increment, so fetch current number and add to it?or erase and add increment variable from inside? former seems better
 rockbutton.addEventListener('click', () => {
-  let choice = playRound(computerPlay(),'rock');
-  results.textContent = `${choice}`;
+	gameRound.textContent = `ROUND ${round}`;
+	banner.textContent = "Choose Rock, Paper, or Scissors!";
+	if (round < 6){
+                let result = playRound('rock', computerPlay());
+                if (result === 'Computer wins')
+                        cscore++;
+                else if (result === 'Player wins')
+                        pscore++;
+		else if (result === 'tie')
+			banner.textContent = "There was a tie. No one wins.";
+		round++;
+        } else { gameRound.textContent = 'game over.'; }
+
+        if (cscore > pscore) {
+        	compScore.textContent = `Computer: ${cscore}`;
+	} else {
+		playScore.textContent = `Player: ${pscore}`;
+	}
 });
 
 paperbutton.addEventListener('click', () => {
