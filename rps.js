@@ -1,21 +1,22 @@
 const rockbutton = document.querySelector('#rock');
 const paperbutton = document.querySelector('#paper');
 const scissorsbutton = document.querySelector('#scissors');
+const results = document.querySelector('#results');
 
-
+//need a score that is saved to increment, so fetch current number and add to it?or erase and add increment variable from inside? former seems better
 rockbutton.addEventListener('click', () => {
   let choice = playRound(computerPlay(),'rock');
-  alert(`${choice}`);
+  results.textContent = `${choice}`;
 });
 
 paperbutton.addEventListener('click', () => {
   let choice = playRound(computerPlay(),'paper');
-  alert(`${choice}`);
+  results.textContent = `${choice}`;
 });
 
 scissorsbutton.addEventListener('click', () => {
   let choice = playRound(computerPlay(),'scissors');
-  alert(`${choice}`);
+  results.textContent = `${choice}`;
 });
 
 //***********FUNCTIONS************************************************************
@@ -30,7 +31,7 @@ function computerPlay() {
 }
 
 function playRound(c, p) {
-	alert(`computer chose ${c} and you chose ${p}`);
+//	alert(`computer chose ${c} and you chose ${p}`);
 	let outcome;
 	if (c === p)
 		outcome = 'tie';
