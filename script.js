@@ -6,22 +6,24 @@ const gameRound = document.createElement('p');
 const compScore = document.createElement('p');
 const playScore = document.createElement('p');
 const banner = document.createElement('p');
-results.appendChild(gameRound);
-results.appendChild(compScore);
-results.appendChild(playScore);
-results.appendChild(banner);
 let cscore = 0;
 let pscore = 0;
 let round = 1;
 banner.textContent = "Choose Rock, Paper, or Scissors!";
 compScore.textContent = 'Computer: 0';
 playScore.textContent = 'Player: 0';
+gameRound.textContent = "Round: ";
+results.appendChild(gameRound);
+results.appendChild(compScore);
+results.appendChild(playScore);
+results.appendChild(banner);
+
 //need a score that is saved to increment, so fetch current number and add to it?or erase and add increment variable from inside? former seems better
 rockbutton.addEventListener('click', () => {
 	gameRound.textContent = `ROUND ${round}`;
 	banner.textContent = "Choose Rock, Paper, or Scissors!";
 	if (round < 6){
-                let result = playRound('rock', computerPlay());
+                let result = playRound(computerPlay(), 'rock');
                 if (result === 'Computer wins')
                         cscore++;
                 else if (result === 'Player wins')
@@ -39,6 +41,49 @@ rockbutton.addEventListener('click', () => {
 });
 
 paperbutton.addEventListener('click', () => {
+        gameRound.textContent = `ROUND ${round}`;
+        banner.textContent = "Choose Rock, Paper, or Scissors!";
+        if (round < 6){
+                let result = playRound(computerPlay(), 'paper');
+                if (result === 'Computer wins')
+                        cscore++;
+                else if (result === 'Player wins')
+                        pscore++;
+                else if (result === 'tie')
+                        banner.textContent = "There was a tie. No one wins.";
+                round++;
+        } else { gameRound.textContent = 'game over.'; }
+
+        if (cscore > pscore) {
+                compScore.textContent = `Computer: ${cscore}`;
+        } else {
+                playScore.textContent = `Player: ${pscore}`;
+        }
+});
+
+scissorsbutton.addEventListener('click', () => {
+        gameRound.textContent = `ROUND ${round}`;
+        banner.textContent = "Choose Rock, Paper, or Scissors!";
+        if (round < 6){
+                let result = playRound(computerPlay(), 'scissors');
+                if (result === 'Computer wins')
+                        cscore++;
+                else if (result === 'Player wins')
+                        pscore++;
+                else if (result === 'tie')
+                        banner.textContent = "There was a tie. No one wins.";
+                round++;
+        } else { gameRound.textContent = 'game over.'; }
+
+        if (cscore > pscore) {
+                compScore.textContent = `Computer: ${cscore}`;
+        } else {
+                playScore.textContent = `Player: ${pscore}`;
+        }
+});
+
+/*
+paperbutton.addEventListener('click', () => {
   let choice = playRound(computerPlay(),'paper');
   results.textContent = `${choice}`;
 });
@@ -47,7 +92,7 @@ scissorsbutton.addEventListener('click', () => {
   let choice = playRound(computerPlay(),'scissors');
   results.textContent = `${choice}`;
 });
-
+*/
 //***********FUNCTIONS************************************************************
 
 function computerPlay() {
