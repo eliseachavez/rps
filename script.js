@@ -2,13 +2,17 @@ const rockbutton = document.querySelector('#rock');
 const paperbutton = document.querySelector('#paper');
 const scissorsbutton = document.querySelector('#scissors');
 const results = document.querySelector('#results');
+const restartButton = document.querySelector('#restart');
+
 const gameRound = document.createElement('p');
 const compScore = document.createElement('p');
 const playScore = document.createElement('p');
 const banner = document.createElement('p');
+
 let cscore = 0;
 let pscore = 0;
 let round = 1;
+
 banner.textContent = "Choose Rock, Paper, or Scissors!";
 compScore.textContent = 'Computer: 0';
 playScore.textContent = 'Player: 0';
@@ -19,6 +23,9 @@ results.appendChild(playScore);
 results.appendChild(banner);
 
 ////////////////////////////////////////////////////////////////////////////////////
+restartButton.addEventListener('click', () => {
+	document.location.reload(true);
+});
 rockbutton.addEventListener('click', () => {
 	gameRound.textContent = `ROUND: ${round}`;
 	banner.textContent = "Choose Rock, Paper, or Scissors!";
