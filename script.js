@@ -12,15 +12,15 @@ let round = 1;
 banner.textContent = "Choose Rock, Paper, or Scissors!";
 compScore.textContent = 'Computer: 0';
 playScore.textContent = 'Player: 0';
-gameRound.textContent = "Round: ";
+gameRound.textContent = "ROUND: ";
 results.appendChild(gameRound);
 results.appendChild(compScore);
 results.appendChild(playScore);
 results.appendChild(banner);
 
-//need a score that is saved to increment, so fetch current number and add to it?or erase and add increment variable from inside? former seems better
+////////////////////////////////////////////////////////////////////////////////////
 rockbutton.addEventListener('click', () => {
-	gameRound.textContent = `ROUND ${round}`;
+	gameRound.textContent = `ROUND: ${round}`;
 	banner.textContent = "Choose Rock, Paper, or Scissors!";
 	if (round < 6){
                 let result = playRound(computerPlay(), 'rock');
@@ -28,10 +28,8 @@ rockbutton.addEventListener('click', () => {
                         cscore++;
                 else if (result === 'Player wins')
                         pscore++;
-		else if (result === 'tie')
-			banner.textContent = "There was a tie. No one wins.";
 		round++;
-        } else { gameRound.textContent = 'game over.'; }
+        } else { gameRound.textContent = 'GAME OVER'; }
 
         if (cscore > pscore) {
         	compScore.textContent = `Computer: ${cscore}`;
@@ -49,10 +47,8 @@ paperbutton.addEventListener('click', () => {
                         cscore++;
                 else if (result === 'Player wins')
                         pscore++;
-                else if (result === 'tie')
-                        banner.textContent = "There was a tie. No one wins.";
                 round++;
-        } else { gameRound.textContent = 'game over.'; }
+        } else { gameRound.textContent = 'GAME OVER'; }
 
         if (cscore > pscore) {
                 compScore.textContent = `Computer: ${cscore}`;
@@ -70,10 +66,8 @@ scissorsbutton.addEventListener('click', () => {
                         cscore++;
                 else if (result === 'Player wins')
                         pscore++;
-                else if (result === 'tie')
-                        banner.textContent = "There was a tie. No one wins.";
                 round++;
-        } else { gameRound.textContent = 'game over.'; }
+        } else { gameRound.textContent = 'GAME OVER'; }
 
         if (cscore > pscore) {
                 compScore.textContent = `Computer: ${cscore}`;
@@ -105,7 +99,6 @@ function computerPlay() {
 }
 
 function playRound(c, p) {
-//	alert(`computer chose ${c} and you chose ${p}`);
 	let outcome;
 	if (c === p)
 		outcome = 'tie';
@@ -121,49 +114,8 @@ function playRound(c, p) {
 		outcome = "Player wins";
 	else if (p === 'scissors' && c === 'paper')
 		outcome = "Player wins";
+
 	//just realized this is better as a switch statement
+	banner.textContent = `Computer chose ${c},\n you chose ${p}.\n The outcome is: ${outcome}.`;
 	return outcome;
 }
-
-/*
-function playerSelection() {
-	let playerChoice = prompt("Enter your option: rock, paper, or scissors: \n");
-	let choice = playerChoice.toLowerCase();
-	if (choice === 'scissors' || choice === 'rock' || choice === 'paper') {
-		choice = choice.slice(0,1);
-		if (choice === 'r' || choice === 'p' || choice === 's') {
-			alert(`You chose ${choice}`);
-			return choice;
-		}
-	} else {
-		alert('What you typed was an invalid option. Perhaps it was mispelled? Please refresh the page to re-enter your choice.');
-	}
-}
-*/
-
-//let playerChoice = playerSelection();
-//let computerChoice = computerPlay();
-//let outcome = playRound(computerChoice, playerChoice);
-
-/*
-function game() {
-	alert('Commencing a match of 5 games against computer! Brace yourself!');
-	let cScore = 0;
-	let pScore = 0;
-	let outcome = '';
-	//for (i = 0; i < 5; i++) {
-		choice = playRound(playerSelection(), computerPlay());
-		if (choice === 'Computer wins')
-			cScore++;
-		else if (choice === 'Player wins')
-			pScore++;
-	//}
-	if (pScore < cScore)
-		alert(`Computer won. score was ${cScore}. Player score was ${pScore}`);
-	else
-		alert(`Player won. Score was ${pScore}. Computer score was ${cScore}`);
-	return;
-}
-*/
-//*******MAIN****************************************************************************
-//game();
