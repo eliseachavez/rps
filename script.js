@@ -1,32 +1,48 @@
-const rockbutton = document.querySelector('#rock');
-const paperbutton = document.querySelector('#paper');
-const scissorsbutton = document.querySelector('#scissors');
-const results = document.querySelector('#results');
+//Select Divs
+const roundDiv = document.querySelector('#round');
+const bannerDiv = document.querySelector('#banner');
+const rockdiv = document.querySelector('#rockdiv');
+const paperdiv = document.querySelector('#paperdiv');
+const scissorsDiv = document.querySelector('#scissorsdiv');
+const cscoreDiv = document.querySelector('#cscore');
+const pscoreDiv = document.querySelector('#pscore');
+const restartDiv = document.querySelector('#restart');
+
+//Select Buttons
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
 const restartButton = document.querySelector('#restart');
 
-const gameRound = document.createElement('p');
-const compScore = document.createElement('p');
-const playScore = document.createElement('p');
-const banner = document.createElement('p');
+//Create Elements
+const gameRound = document.createElement('p'); //append to roundDiv later
+const compScore = document.createElement('p'); //append to cscoreDiv later
+const playScore = document.createElement('p'); //append to scoreDiv later
+const banner = document.createElement('p'); //append to bannerDiv later
 
+//Global Variables
 let cscore = 0;
 let pscore = 0;
 let round = 1;
 
+//Initalize values of newly created elements
 banner.textContent = "Choose Rock, Paper, or Scissors!";
 compScore.textContent = 'Computer: 0';
 playScore.textContent = 'Player: 0';
 gameRound.textContent = "ROUND: ";
-results.appendChild(gameRound);
-results.appendChild(compScore);
-results.appendChild(playScore);
-results.appendChild(banner);
 
-////////////////////////////////////////////////////////////////////////////////////
+//Need to append each newly created element to the corresponding div
+roundDiv.appendChild(gameRound);
+cscoreDiv.appendChild(compScore);
+pscoreDiv.appendChild(playScore);
+bannerDiv.appendChild(banner);
+
+//***Event Listeners**********************************
+//////////////////////////////////////////////////////
 restartButton.addEventListener('click', () => {
 	document.location.reload(true);
 });
-rockbutton.addEventListener('click', () => {
+rockButton.addEventListener('click', () => {
 	gameRound.textContent = `ROUND: ${round}`;
 	banner.textContent = "Choose Rock, Paper, or Scissors!";
 	if (round < 6){
@@ -45,7 +61,7 @@ rockbutton.addEventListener('click', () => {
 	}
 });
 
-paperbutton.addEventListener('click', () => {
+paperButton.addEventListener('click', () => {
         gameRound.textContent = `ROUND ${round}`;
         banner.textContent = "Choose Rock, Paper, or Scissors!";
         if (round < 6){
@@ -64,7 +80,7 @@ paperbutton.addEventListener('click', () => {
         }
 });
 
-scissorsbutton.addEventListener('click', () => {
+scissorsButton.addEventListener('click', () => {
         gameRound.textContent = `ROUND ${round}`;
         banner.textContent = "Choose Rock, Paper, or Scissors!";
         if (round < 6){
@@ -83,18 +99,8 @@ scissorsbutton.addEventListener('click', () => {
         }
 });
 
-/*
-paperbutton.addEventListener('click', () => {
-  let choice = playRound(computerPlay(),'paper');
-  results.textContent = `${choice}`;
-});
-
-scissorsbutton.addEventListener('click', () => {
-  let choice = playRound(computerPlay(),'scissors');
-  results.textContent = `${choice}`;
-});
-*/
-//***********FUNCTIONS************************************************************
+//*******Functions*************************************
+//////////////////////////////////////////////////////
 
 function computerPlay() {
 	let options = ['rock', 'paper', 'scissors'];
