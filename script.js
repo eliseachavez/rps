@@ -1,5 +1,5 @@
 //Select Divs
-const roundDiv = document.querySelector('#round');
+const roundDiv = document.querySelector('#rounddiv');
 const bannerDiv = document.querySelector('#banner');
 const rockdiv = document.querySelector('#rockdiv');
 const paperdiv = document.querySelector('#paperdiv');
