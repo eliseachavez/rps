@@ -9,14 +9,14 @@ justify-content: center;
 #round {
 width:100px;
 height: 100px;
-border: solid blue;
+border: solid pink;
 flex: 1;
 }
 
 #banner {
 width:100px;
 height: 100px;
-border: solid blue;
+border: solid purple;
 flex: 1;
 }
 
