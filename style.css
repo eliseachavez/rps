@@ -21,8 +21,8 @@ flex: 1;
 }
 
 #rps {
-width:100px;
-height: 100px;
+width: 300px;
+height: 300px;
 border: solid blue;
 display: flex;	
 flex: 1;
