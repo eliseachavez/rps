@@ -47,9 +47,9 @@ rockButton.addEventListener('click', () => {
 	banner.textContent = "Choose Rock, Paper, or Scissors!";
 	if (round < 6){
                 let result = playRound(computerPlay(), 'rock');
-                if (result === 'Computer wins')
+                if (result === 'Computer wins.')
                         cscore++;
-                else if (result === 'Player wins')
+                else if (result === 'Player wins.')
                         pscore++;
 		round++;
         } else { gameRound.textContent = 'GAME OVER'; }
@@ -66,9 +66,9 @@ paperButton.addEventListener('click', () => {
         banner.textContent = "Choose Rock, Paper, or Scissors!";
         if (round < 6){
                 let result = playRound(computerPlay(), 'paper');
-                if (result === 'Computer wins')
+                if (result === 'Computer wins.')
                         cscore++;
-                else if (result === 'Player wins')
+                else if (result === 'Player wins.')
                         pscore++;
                 round++;
         } else { gameRound.textContent = 'GAME OVER'; }
@@ -85,9 +85,9 @@ scissorsButton.addEventListener('click', () => {
         banner.textContent = "Choose Rock, Paper, or Scissors!";
         if (round < 6){
                 let result = playRound(computerPlay(), 'scissors');
-                if (result === 'Computer wins')
+                if (result === 'Computer wins.')
                         cscore++;
-                else if (result === 'Player wins')
+                else if (result === 'Player wins.')
                         pscore++;
                 round++;
         } else { gameRound.textContent = 'GAME OVER'; }
@@ -116,17 +116,17 @@ function playRound(c, p) {
 	if (c === p)
 		outcome = 'tie';
 	else if (c === 'rock' && p === 'paper')
-		outcome = "Player wins";
+		outcome = "Player wins.";
 	else if (c === 'rock' && p === 'scissors')
-		outcome = "Computer wins";
+		outcome = "Computer wins.";
 	else if (c === 'scissors' && p === 'paper')
-		outcome = "Computer wins";
+		outcome = "Computer wins.";
 	else if (p === 'rock' && c === 'paper')
-		outcome = "Computer wins";
+		outcome = "Computer wins.";
 	else if (p === 'rock' && c === 'scissors')
-		outcome = "Player wins";
+		outcome = "Player wins.";
 	else if (p === 'scissors' && c === 'paper')
-		outcome = "Player wins";
+		outcome = "Player wins.";
 
 	//just realized this is better as a switch statement
 	banner.textContent = `Computer chose ${c} 
