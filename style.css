@@ -1,6 +1,5 @@
 #container {
 display: flex;
-border: solid red;
 flex-direction: column;
 align-items: center;
 align-content: center;
@@ -8,80 +7,77 @@ justify-content: center;
 }
 
 #round {
-width: 100px;
-height: 100px;
-border: solid blue;
+width: 113em;
+height: 20%;
 flex: 1;
+text-align: center;
 }
 
 #banner {
-width:100px;
-height: 100px;
-border: solid purple;
+width:113em;
+height: 20%;;
 flex: 1;
+text-align: center;
 }
 
 #rps {
-width: 113em;
-height: 10em;
-border: solid blue;
+width: 24em;
+height: 20em;
 display: flex;	
 flex: 1;
 flex-direction: row;
 align-items: center;
+align-content: center;
 justify-content: center;
+text-align: center;
 }
 
 #rockdiv {
-width: 10em;
+width: 8em;
 height: 3em;
-border: solid green;
 flex: 1;
-border: solid green;
 }
 
 #paperdiv {
-width: 10em;
+width: 8em;
 height: 3em;
-border: solid green;
 flex: 1;
 }
 
 #scissorsdiv {
-width: 10em;
+width: 8em;
 height: 3em;
-border: solid green;
 flex: 1;
 }
 
 #score {
-width:100px;
-height: 100px;
+width: 16em;
+height: 10em;
 display: flex;
-border: solid blue;
 flex: 1;
 flex-direction: row;
 align-items: center;
+align-content: center;
 justify-content: center;
 }
 
 #cscore {
-width:100px;
-height: 100px;
-border: solid purple;
+width: 8em;
+height: 3em;
 flex: 1;
+text-align: center;
 }
 
 #pscore {
-width:100px;
-height: 100px;	
-border: solid purple;
+width: 8em;
+height: 3em;	
 flex: 1;
+text-align: center;
 }
 
 #restart {
-width:100px;
-height: 100px;	
-border: solid blue;
+width: 10em;
+height: 2em;	
 flex: 1;
+text-align: center;
 }
