@@ -2,8 +2,9 @@
 display: flex;
 border: solid red;
 flex-direction: column;
-align-items: start;
-justify-content: start;
+align-items: center;
+align-content: center;
+justify-content: center;
 }
 
 #round {
@@ -21,8 +22,8 @@ flex: 1;
 }
 
 #rps {
-width: 300px;
-height: 300px;
+width: 113em;
+height: 10em;
 border: solid blue;
 display: flex;	
 flex: 1;
@@ -32,23 +33,23 @@ justify-content: center;
 }
 
 #rockdiv {
-width:100px;
-height: 100px;
+width: 10em;
+height: 3em;
 border: solid green;
 flex: 1;
 border: solid green;
 }
 
 #paperdiv {
-width:100px;
-height: 100px;
+width: 10em;
+height: 3em;
 border: solid green;
 flex: 1;
 }
 
 #scissorsdiv {
-width:100px;
-height: 100px;
+width: 10em;
+height: 3em;
 border: solid green;
 flex: 1;
 }
