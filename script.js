@@ -129,8 +129,8 @@ function playRound(c, p) {
 		outcome = "Player wins.";
 
 	//just realized this is better as a switch statement
-	banner.textContent = `Computer chose ${c} 
-	Player chose ${p}
+	banner.textContent = `Computer chose ${c}. 
+	Player chose ${p}.
 	The outcome is: ${outcome}.`;
 	return outcome;
 }
